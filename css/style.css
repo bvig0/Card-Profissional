@@ -1,26 +1,7 @@
-/* Vairaveis e Reset*/
-:root {
-    --cor-fonte: #000000;
-    --cor-subFonte: #474747;
-    --cor-card: #774821;
-    --cor-fundo: #eeeeee;
-    --cor-branco: #fff;
-    --cor-email: #bd2727;
-    --cor-github: #353535;
-    --cor-linkedin: #0e76a8;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+@import url('config.css');
 
 body {
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-fundoClaro);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,30 +52,99 @@ body {
     margin: 10px 0 20px 0;
 }
 
-.info nav {
-display: flex;
-justify-content: center;
-gap: 20px;
+.info label {
+    position: relative;
+    padding: 10px 25px;
+    border-radius: 35px;
+    background-color: var(--cor-card);
+    color: var(--cor-branco);
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info label::before {
+    content: "Cancelar";
+    padding: 10px 25px;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--cor-card);
+    color: var(--cor-branco);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.info label:hover {
+    letter-spacing: 1px;
+}
+
+.info #check {
+    display: none;
+}
+
+.info #check:checked~label::before {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icons {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor-fundoClaro);
+    padding: 40px;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 35px;
+    box-shadow: 0 0 4px #00000080;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+}
+
+.icons::before {
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    height: 18px;
+    width: 18px;
+    background-color: var(--cor-fundoClaro);
+
+    transform: rotate(45deg);
+}
+
+#check:checked~.icons {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Deixando cada link com um modelo */
-.info nav a {
-    display: inline-block;
+.info .icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.7em;
     color: var(--cor-branco);
-    padding: 15px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     transition: 1s;
 }
 
-.info nav a:hover {
+.info .icons a:hover {
     transform: scale(1.2);
 }
 
 
-/* Alterando apenas as cores de fundo do item */
+/* Alterando apenas as cores de fundoClaro do item */
 #github {
     background-color: var(--cor-github);
 }
@@ -109,7 +159,14 @@ gap: 20px;
 
 /* RESPOSIVIDADES PARA TELAS MENORES */
 
-@media (max-width: 768px) {
-    .card {}
-
+@media  (max-width: 768px) {
+    .icons {
+        padding: 30px;
+        width: 80%;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .icons {
+        width: 50%;
+    }
 }
