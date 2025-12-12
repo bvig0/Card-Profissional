@@ -5,15 +5,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+        border: none;
+
     font-family: "Poppins", sans-serif;
 }
 
 /* Variaveis */
 :root {
+    --cor-base: #fff;
+    --cor-fundo: #eeeeee;
     --cor-fonte: #000;
-    --cor-subFonte: #474747;
-    --cor-card: #774821;
-    --cor-fundoClaro: #eeeeee;
+    --cor-subfonte: #474747;
+
+    --cor-primaria: #632177;
+    --cor-branco: #fff;
+    --cor-email: #bd2727;
+    --cor-github: #353535;
+    --cor-linkedin: #0e76a8;
+}
+
+.darkmode {
+    --cor-base: #080808;
+    --cor-fundo: #222222;
+    --cor-fonte: #fff;
+    --cor-subfonte: #d1d1d1;
+
+    --cor-primaria: #9921c9;
     --cor-branco: #fff;
     --cor-email: #bd2727;
     --cor-github: #353535;

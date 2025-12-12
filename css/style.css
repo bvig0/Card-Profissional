@@ -1,7 +1,7 @@
 @import url('config.css');
 
 body {
-    background-color: var(--cor-fundoClaro);
+    background-color: var(--cor-fundo);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@ body {
 }
 
 .card {
-    background-color: var(--cor-card);
+    background-color: var(--cor-primaria);
     max-width: 350px;
     width: 350px;
     border-radius: 25px;
@@ -34,20 +34,24 @@ body {
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid var(--cor-branco);
+    border: 3px solid var(--cor-base);
 }
 
 /* As informações e links */
 .info {
-    background-color: var(--cor-branco);
+    background-color: var(--cor-base);
     text-align: center;
     border-radius: 0 0 25px 25px;
     width: 100%;
     padding: 60px 25px 30px 25px;
 }
 
+.info h2 {
+    color: var(--cor-fonte);
+}
+
 .info p {
-    color: var(--cor-subFonte);
+    color: var(--cor-subfonte);
     font-weight: 600;
     margin: 10px 0 20px 0;
 }
@@ -56,7 +60,7 @@ body {
     position: relative;
     padding: 10px 25px;
     border-radius: 35px;
-    background-color: var(--cor-card);
+    background-color: var(--cor-primaria);
     color: var(--cor-branco);
     font-weight: 600;
     text-transform: uppercase;
@@ -70,7 +74,7 @@ body {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background-color: var(--cor-card);
+    background-color: var(--cor-primaria);
     color: var(--cor-branco);
     opacity: 0;
     pointer-events: none;
@@ -91,10 +95,10 @@ body {
 
 .icons {
     position: absolute;
-    top: 42%;
+    top: 39%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--cor-fundoClaro);
+    background-color: var(--cor-fundo);
     padding: 40px;
     width: 30%;
     display: flex;
@@ -114,8 +118,7 @@ body {
     bottom: -9px;
     height: 18px;
     width: 18px;
-    background-color: var(--cor-fundoClaro);
-
+    background-color: var(--cor-fundo);
     transform: rotate(45deg);
 }
 
@@ -143,7 +146,6 @@ body {
     transform: scale(1.2);
 }
 
-
 /* Alterando apenas as cores de fundoClaro do item */
 #github {
     background-color: var(--cor-github);
@@ -157,11 +159,41 @@ body {
     background-color: var(--cor-email);
 }
 
+#theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    position: relative;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#theme i {
+    color: var(--cor-branco);
+}
+
+#theme .bi-brightness-high{
+    display: none;
+}
+
+.darkmode #theme .bi-moon-stars {
+    display: none;
+}
+
+.darkmode #theme .bi-brightness-high {
+    display: block;
+}
+
 /* RESPOSIVIDADES PARA TELAS MENORES */
 
 @media  (max-width: 768px) {
     .icons {
-        padding: 30px;
         width: 80%;
     }
 }
